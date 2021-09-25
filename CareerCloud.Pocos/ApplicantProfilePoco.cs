@@ -37,6 +37,7 @@ namespace CareerCloud.Pocos
         public string PostalCode { get; set; }
 
         [Column("Time_Stamp")]
+        [NotMapped]
         public byte[] TimeStamp { get; set; }
 
         public virtual ICollection<ApplicantEducationPoco> ApplicantEducations { get; set; }
@@ -45,7 +46,7 @@ namespace CareerCloud.Pocos
 
         public virtual SystemCountryCodePoco SystemCountryCode { get; set; }
 
-        public virtual ICollection<ApplicantWorkHistoryPoco> ApplicantWorkHistories { get; set; }
+        public virtual ICollection<ApplicantWorkHistoryPoco> ApplicantWorkHistorys { get; set; }
 
         public virtual ICollection<ApplicantResumePoco> ApplicantResumes { get; set; }
 
