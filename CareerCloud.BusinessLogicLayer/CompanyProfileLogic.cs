@@ -36,9 +36,9 @@ namespace CareerCloud.BusinessLogicLayer
                 {
                     exceptions.Add(new ValidationException(600, "Company website domain must be '.ca', '.com' or '.biz'"));
                 }
-                else if (poco.CompanyWebsite.Substring(poco.CompanyWebsite.Length - 3) != websiteExtensions[0] ||
-                    poco.CompanyWebsite.Substring(poco.CompanyWebsite.Length - 4) != websiteExtensions[1] ||
-                    poco.CompanyWebsite.Substring(poco.CompanyWebsite.Length - 4) != websiteExtensions[2])
+                else if (!poco.CompanyWebsite.Contains(websiteExtensions[0]) &&
+                        !poco.CompanyWebsite.Contains(websiteExtensions[1]) &&
+                        !poco.CompanyWebsite.Contains(websiteExtensions[2]))
                 {
                     exceptions.Add(new ValidationException(600, "Company website domain must be '.ca', '.com' or '.biz'"));
                 }
